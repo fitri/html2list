@@ -1,0 +1,1 @@
+parsing html table give a long string of a html text, will use regex to find beginning and end tag from table in html. can handle multiple table and parse the final result into a list array containing all the table with each table containing every row and each row containing every data.
