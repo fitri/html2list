@@ -29,7 +29,10 @@ for table in tablelist:
 	
 	#loop row to get data
 	for tabledata in rowlist:
+		eachrow = []
 		datalist = re.findall(r'\<th.*?/th\>|\<td.*?/td\>', tabledata)
 	
 	print(f"This table contain {len(tablerow[0])} row")
-	print(f"Each row contain {len(datalist)} data")
+	print(f"Each row contain {len(datalist)} data or column")
+
+# next need to figure out how to append data into row, then row into table to produce single multidimensional list.
