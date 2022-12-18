@@ -23,16 +23,15 @@ print(f"Found {len(tablelist)} table in the html")
 
 #loop for table to get row
 for table in tablelist:
-	tablerow = []
-	rowlist = re.findall(r'\<tr.*?/tr\>', table)
-	tablerow.append(rowlist)
+	#loop table to get list of row
+	rowlist = re.findall(r'\<tr.*?/tr\>', table) #return list of <tr> tag from <table> tag
+	print(rowlist)
 	
-	#loop row to get data
-	for tabledata in rowlist:
-		eachrow = []
-		datalist = re.findall(r'\<th.*?/th\>|\<td.*?/td\>', tabledata)
-	
-	print(f"This table contain {len(tablerow[0])} row")
-	print(f"Each row contain {len(datalist)} data or column")
+	#loop row to get list of data
+	for index, tabledata in enumerate(rowlist):
+		datalist = re.findall(r'\<th.*?/th\>|\<td.*?/td\>', tabledata) #return list of <td> from <tr> tag
+		rowlist[index] = datalist
+	print(rowlist)
 
+	
 # next need to figure out how to append data into row, then row into table to produce single multidimensional list.
