@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import re
-import pprint
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -32,6 +31,7 @@ for table in tablelist:
 	for index, tabledata in enumerate(rowlist):
 		datalist = re.findall(r'\<th.*?/th\>|\<td.*?/td\>', tabledata) #return list of <td> from <tr> tag
 		rowlist[index] = datalist
-	pprint.pprint(rowlist)
+	print(rowlist)
 
-# now returning single multidimensional list but data containing <td> tag.
+	
+# next need to figure out how to append data into row, then row into table to produce single multidimensional list.
